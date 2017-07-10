@@ -1,4 +1,4 @@
-## Bank_tech_test
+# Bank_tech_test
 
 Today, you'll practice doing a tech test.
 
@@ -8,9 +8,9 @@ You'll get to practice your OO design and TDD skills.
 
 You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
 
-# Specification
+## Specification
 
-# Requirements
+## Requirements
 
 You should be able to interact with the your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
 Deposits, withdrawal.
@@ -24,6 +24,8 @@ date || credit || debit || balance
 14/01/2012 || || 500.00 || 2500.00
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
+
+##User Stories
 
 ```
 As a user,
