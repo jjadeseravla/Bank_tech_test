@@ -5,4 +5,8 @@ class Bank
      @balance = balance
    end
 
+   def money_deposited(money_in)
+     @balance += money_in
+   end
+
  end
