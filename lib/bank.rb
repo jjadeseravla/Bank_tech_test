@@ -6,12 +6,6 @@ class Bank
    def initialize(balance = 0)
      @balance = balance
      @log = Log.new
-    #  (date, money_deposited, money_withdrawn, balance) # instead of []. @log.withdrawal(amount)implement a push method:
-    #  class transactions
-    # def withdrawal
-  # end
-  # def deposit
-# end
    end
 
    def money_deposited(money_in)
