@@ -6,16 +6,7 @@ This practice session is about producing the best code I can when there is a min
 
 ## Intro
 
-Bank_tech_test built on Ruby that allows deposits and withdrawals.
-Account statement (date, amount, balance) printing can be seen.
-
-Given a client makes a deposit of 1000 on 10-01-2012 And a deposit of 2000 on 13-01-2012 And a withdrawal of 500 on 14-01-2012 When she prints her bank statement, she would see:
-
-date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
-
+Bank_tech_test is built on Ruby, and allows deposits and withdrawals of money to be done, as well as displaying the date of the bank account was debited or credited, and a history of this.
 
 ## How to use
 
@@ -49,4 +40,6 @@ I want to see a statement of my balance with the date of transaction.
 
 ##Thoughts
 
-I was unsure as to how many edge cases to include in this project.  
+- I was unsure as to how many edge cases to include in this project.
+- I decided to create a separate class for Log, which included the transaction in order to wrap the transaction array in its own class.  I then included two private methods in the Bank class that can be called on when the money_deposited or money_withdrawn methods are called, in order for the user to see a little history of statements.  I was unsure as to whether this was a good way to approach it, or to create a new class altogether for printing a statement.
+- I was also unsure if my testing was adequate and whether I should include any feature tests, as this is heavily back end based.
