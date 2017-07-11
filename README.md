@@ -14,7 +14,7 @@ Bank_tech_test is built on Ruby, and allows deposits and withdrawals of money to
 - run rspec to make sure all tests pass on your console
 - Play away on your command line using IRB or PRY.
 
-##User Stories
+User Stories
 
 ```
 As a user,
@@ -38,7 +38,7 @@ so I can keep track of my transactions,
 I want to see a statement of my balance with the date of transaction.
 ```
 
-##Thoughts
+Thoughts
 
 - I was unsure as to how many edge cases to include in this project.
 - I decided to create a separate class for Log, which included the transaction in order to wrap the transaction array in its own class.  I then included two private methods in the Bank class that can be called on when the money_deposited or money_withdrawn methods are called, in order for the user to see a little history of statements.  I was unsure as to whether this was a good way to approach it, or to create a new class altogether for printing a statement.
