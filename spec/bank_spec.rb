@@ -2,6 +2,7 @@ require 'bank'
 
 describe Bank do
   subject(:bank) { described_class.new }
+  subject(:log) { described_class.new }
 
   describe '#balance' do
     it 'has a default balance of 0' do
@@ -11,14 +12,25 @@ describe Bank do
 
   describe '#money_deposited' do
     it 'can have money deposited into bank account' do
-      expect(bank.money_deposited(100)).to eq(100)
+      expect(bank.money_deposited(100)).to eq([{:date=>"11/07/2017",
+                                                :money_deposited=>100,
+                                                :money_withdrawn=>nil,
+                                                :balance=>100}])
     end
   end
 
   describe '#money_withdrawn' do
     it 'can have money taken out of the bank account'do
+      bank2 = Bank.new
       bank.money_deposited(100)
-      expect(bank.money_withdrawn(50)).to eq(50)
+      expect(bank.money_withdrawn(50)).to eq([{:date=>"11/07/2017",
+                                                :money_deposited=>100,
+                                                :money_withdrawn=>nil,
+                                                :balance=>100},
+                                              {:date=>"11/07/2017",
+                                                :money_deposited=>nil,
+                                                :money_withdrawn=>50,
+                                                :balance=>50}])
     end
 
     it 'should not allow you to withdraw more money than you have in the bank' do
