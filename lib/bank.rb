@@ -8,33 +8,18 @@ class Bank
      @log = Log.new
    end
 
-   def money_deposited(money_in)
-     @balance += money_in
-     credit_transaction(money_in)
+   def money_deposited(money)
+     change_balance(money)
+     @log.transaction(Time.now.strftime('%d/%m/%Y'), money, nil, @balance)
    end
 
-   def money_withdrawn(money_out)
-     raise 'you do not have sufficient funds' if @balance - money_out <= 0
-     @balance -= money_out
-     debit_transaction(money_out)
+   def money_withdrawn(money)
+     raise 'you do not have sufficient funds' if @balance - money <= 0
+     change_balance(-money)
+     @log.transaction(Time.now.strftime('%d/%m/%Y'), nil, money, @balance)
    end
 
-   private
-
-   def credit_transaction(money_in)
-     date = Time.now.strftime('%d/%m/%Y')
-     money_deposited = money_in
-     money_withdrawn = nil
-     balance = @balance
-     @log.transaction(date, money_deposited, money_withdrawn, balance)
+   def change_balance(money)
+     @balance += money
    end
-
-   def debit_transaction(money_out)
-     date = Time.now.strftime('%d/%m/%Y')
-     money_deposited = nil
-     money_withdrawn = money_out
-     balance = @balance
-     @log.transaction(date, money_deposited, money_withdrawn, balance)
-   end
-
  end

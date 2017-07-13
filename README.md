@@ -11,6 +11,8 @@ Bank_tech_test is built on Ruby, and allows deposits and withdrawals of money to
 ## How to use
 
 - clone this repo
+- install adequate gems
+- bundle install
 - run rspec to make sure all tests pass on your console
 - Play away on your command line using IRB or PRY.
 

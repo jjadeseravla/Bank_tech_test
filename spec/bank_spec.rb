@@ -12,7 +12,7 @@ describe Bank do
 
   describe '#money_deposited' do
     it 'can have money deposited into bank account' do
-      expect(bank.money_deposited(100)).to eq([{:date=>"11/07/2017",
+      expect(bank.money_deposited(100)).to eq([{:date=>Time.now.strftime('%d/%m/%Y'),
                                                 :money_deposited=>100,
                                                 :money_withdrawn=>nil,
                                                 :balance=>100}])
@@ -23,11 +23,11 @@ describe Bank do
     it 'can have money taken out of the bank account'do
       bank2 = Bank.new
       bank.money_deposited(100)
-      expect(bank.money_withdrawn(50)).to eq([{:date=>"11/07/2017",
+      expect(bank.money_withdrawn(50)).to eq([{:date=>Time.now.strftime('%d/%m/%Y'),
                                                 :money_deposited=>100,
                                                 :money_withdrawn=>nil,
                                                 :balance=>100},
-                                              {:date=>"11/07/2017",
+                                              {:date=>Time.now.strftime('%d/%m/%Y'),
                                                 :money_deposited=>nil,
                                                 :money_withdrawn=>50,
                                                 :balance=>50}])
